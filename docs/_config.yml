@@ -26,13 +26,26 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+# twitter_username: jekyllrb
+# github_username:  jekyll
 
-# Build settings
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+environment: prod
 theme: minima
 plugins:
+  - jekyll-scholar
+  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-katex
+katex:
+  js_path: "assets"  # Path used to search for katex.min.js
+  rendering_options:
+  # Default KaTeX rendering options. See https://github.com/Khan/KaTeX#rendering
+  throw_error: false      # throwOnError - set to false if you want rendering to
+                          #      error as text rather than a build error
+  error_color: "#cc0000"  # errorColor
+              #
 
 # Exclude from processing.
 # The following items will not be processed, by default.
